@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="280.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.app.controller.EditController">
+   <children>
+      <GridPane layoutX="75.0" layoutY="48.0" prefHeight="215.0" prefWidth="215.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="83.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="117.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name:" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+            <Label text="Email:" GridPane.rowIndex="1" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Gender:" GridPane.rowIndex="2" />
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="maleRadio" mnemonicParsing="false" selected="true" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="femaleRadio" mnemonicParsing="false" text="Female" toggleGroup="$gender">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Label text="Date Of Birth:" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dobPicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="savebtn" mnemonicParsing="false" onAction="#updateStudent" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
